@@ -107,6 +107,17 @@ get_header();
         </div>
         <div class="right-section">
             <div class="left_part">
+			      <a class="bottom" href="<?php echo site_url();?>/product/#gold">
+					<?php
+						$product=get_post_meta(4,"gold_category_image",true);
+						$thumb = wp_get_attachment_image_src($product, 'gold_image' );	
+					?>
+					<img src="<?php echo $url = $thumb['0'];?>">
+                    <div class="heading3">
+                        <h2><?php the_field('gold_category_heading',4);?></h2>
+                        <p><?php the_field('gold_category_text',4);?></p>
+                    </div>
+                </a>
                 <a class="top" href="<?php echo site_url();?>/product/#bronze">
                 <?php
 					$product=get_post_meta(4,"bronze_category_image",true);
@@ -118,17 +129,7 @@ get_header();
                         <p><?php the_field('bronze_category_text',4);?></p>
                     </div>
                 </a>
-                <a class="bottom" href="<?php echo site_url();?>/product/#gold">
-				<?php
-					$product=get_post_meta(4,"gold_category_image",true);
-					$thumb = wp_get_attachment_image_src($product, 'gold_image' );	
-				?>
-					<img src="<?php echo $url = $thumb['0'];?>">
-                    <div class="heading3">
-                        <h2><?php the_field('gold_category_heading',4);?></h2>
-                        <p><?php the_field('gold_category_text',4);?></p>
-                    </div>
-                </a>
+               
             </div>
             <div class="right_part">
                 <a class="top" href="<?php echo site_url();?>/product/#silver">

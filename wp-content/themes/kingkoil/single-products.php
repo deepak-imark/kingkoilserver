@@ -20,7 +20,11 @@ $post_id = get_the_ID();
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                   <div class="product_diffr_view">
+				<div id="loading_sec" style="display:none" align="center">
+						<img src="<?php echo  get_template_directory_uri(); ?>/images/ajax-loader.gif" id="loader">
+				   </div>
+                   <div class="product_diffr_view"  id="one">
+				  
 				   <div id="slider" class="flexslider"> 
 				   <ul class="slides">  
 				<?php  $one1 = get_post_meta(get_the_ID(),'brown_color_products',true); ?>
@@ -101,32 +105,26 @@ $post_id = get_the_ID();
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Additional Information</a></li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Delivery and Returns</a></li>
-                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Reviews</a></li>
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"> <?php the_field('bottom_description_heading',$post->ID);?></a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><?php the_field('additional_information',$post->ID);?></a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><?php the_field('delievery_and_returns',$post->ID);?></a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"> <?php the_field('reviews',$post->ID);?></a></li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
-                                <h2>King Koil Club</h2>
+                                
                                 <?php the_field('bottom_description',$post->ID);?>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
-                                <h2>Additional Information</h2>
-                                <p>Classic Mahogany French sleigh bed with high foot board and double scrolled arms having slatted base, this is one of our newest ranges of solid mahogany bedroom furniture - elegant and serene. Add some charm and elegance to your bedroom in true traditional style with this solid mahogany sleigh bed. </p>
-                                <p>Classic Mahogany French sleigh bed with high foot board and double scrolled arms having slatted base, this is one of our newest ranges of solid mahogany bedroom furniture - elegant and serene. Add some charm and elegance to your bedroom in true traditional style with this solid mahogany sleigh bed.</p>
+                                <?php the_field('additional_information_content',$post->ID);?>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="messages">
-                                <h2>Delivery and Returns</h2>
-                                <p>Classic Mahogany French sleigh bed with high foot board and double scrolled arms having slatted base, this is one of our newest ranges of solid mahogany bedroom furniture - elegant and serene. Add some charm and elegance to your bedroom in true traditional style with this solid mahogany sleigh bed. </p>
-                                <p>Classic Mahogany French sleigh bed with high foot board and double scrolled arms having slatted base, this is one of our newest ranges of solid mahogany bedroom furniture - elegant and serene. Add some charm and elegance to your bedroom in true traditional style with this solid mahogany sleigh bed.</p>
+                                 <?php the_field('delievery_and_returns_content',$post->ID);?>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="settings">
-                                <h2>Reviews</h2>
-                                <p>Classic Mahogany French sleigh bed with high foot board and double scrolled arms having slatted base, this is one of our newest ranges of solid mahogany bedroom furniture - elegant and serene. Add some charm and elegance to your bedroom in true traditional style with this solid mahogany sleigh bed. </p>
-                                <p>Classic Mahogany French sleigh bed with high foot board and double scrolled arms having slatted base, this is one of our newest ranges of solid mahogany bedroom furniture - elegant and serene. Add some charm and elegance to your bedroom in true traditional style with this solid mahogany sleigh bed.</p>
+                                <?php the_field('reviews_content',$post->ID);?>
                             </div>
                         </div>
 
@@ -155,15 +153,16 @@ $post_id = get_the_ID();
 			jQuery(this).click(function(){
 			var id = jQuery(this).attr("id");
 			var post_id = "<?php echo $post_id; ?>";
+			jQuery("#loading_sec").show();
+			jQuery("#one").hide();
 			jQuery.ajax({
 			type: "GET",
 			url:"<?php echo site_url(); ?>/wp-content/themes/kingkoil/ajax/change_cooor.php",
 			data:{post_id:post_id,id:id,format:'raw'},
 			success:function(resp){
-			
+				jQuery("#loading_sec").hide();
 				jQuery(".product_diffr_view").empty().append(resp);
-			
-
+				jQuery("#one").show();
 			}
 			});
 			});

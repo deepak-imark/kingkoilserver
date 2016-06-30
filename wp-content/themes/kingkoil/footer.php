@@ -1,28 +1,28 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>OUR PRODUCTS</h2>
+                <ul class="menu_footer">
+                    <li>
+                        <a href="<?php echo site_url();?>/product/#gold">Gold</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo get_permalink(6);?>/#silver">Silver</a>
+                    </li>
 
- <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h2>OUR PRODUCTS</h2>
-                    <ul class="menu_footer">
-                        <li>
-                            <a href="<?php echo get_permalink(6);?>/#silver">Silver</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url();?>/product/#gold">Gold</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url();?>/product/#bronze">Bronze</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url();?>/product">All</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h2>INFORMATION</h2>
-                    <ul class="menu_footer">
-                        <?php 
+                    <li>
+                        <a href="<?php echo site_url();?>/product/#bronze">Bronze</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url();?>/product">All</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>INFORMATION</h2>
+                <ul class="menu_footer">
+                    <?php 
 								$defaults = array(
 								'theme_location'  => '',
 								'menu'            => 'footer_menu',
@@ -43,38 +43,42 @@
 								);
 
 								wp_nav_menu( $defaults ); ?>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h2>SOCIAL MEDIA</h2>
-                    <ul class="social">
-                        <li>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                </ul>
             </div>
-            <div class="copyright">Copyright &copy; <?php echo date('Y');?> KingKoil </div>
-            <div class="live_chat"><img src="<?php echo get_template_directory_uri(); ?>/images/chat_icon.png">start live chat</div>
+            <div class="col-md-3">
+                <h2>SOCIAL MEDIA</h2>
+                <ul class="social">
+                    <li>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </footer>
-	<?php wp_footer(); ?>
+        <div class="copyright">
+            <p>Copyright &copy;
+                <?php echo date('Y');?> KingKoil </p>
+            <p class="imark">Powered By :<a href="http://www.imarkinfotech.com/" target="_blank"> iMark Infotech</a></p>
+        </div>
+        <div class="live_chat"><img src="<?php echo get_template_directory_uri(); ?>/images/chat_icon.png">start live chat</div>
+    </div>
+</footer>
+<?php wp_footer(); ?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5lightbox.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/html5lightbox.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/wow.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/shCore.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/shCore.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/shBrushXml.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/shBrushJScript.js"></script>
     <script defer src="<?php echo get_template_directory_uri(); ?>/js/jquery.flexslider.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js"></script>
     <script defer src="<?php echo get_template_directory_uri(); ?>/js/demo.js"></script>
     <script>
@@ -89,7 +93,7 @@
 
         });
     </script>
-	<script>
+    <script>
         jQuery(document).ready(function () {
 
             jQuery("#our_testim").owlCarousel({
@@ -108,9 +112,9 @@
         });
     </script>
     <script>
-       jQuery(document).ready(function () {
+        jQuery(document).ready(function () {
 
-           jQuery("#testimonial").owlCarousel({
+            jQuery("#testimonial").owlCarousel({
 
                 autoPlay: false, //Set AutoPlay to 3 seconds
                 items: 1,
@@ -158,14 +162,14 @@
         jQuery(window).scroll(function () {
             stickyNav();
         });
-</script>
+    </script>
 
-	<script type="text/javascript">
-       jQuery(function () {
+    <script type="text/javascript">
+        jQuery(function () {
             SyntaxHighlighter.all();
         });
-       jQuery(window).load(function () {
-           jQuery('#carousel').flexslider({
+        jQuery(window).load(function () {
+            jQuery('#carousel').flexslider({
                 animation: "slide",
                 controlNav: false,
                 animationLoop: false,
@@ -187,10 +191,10 @@
             });
         });
     </script>
-<script>
+    <script>
         jQuery(document).ready(function () {
 
-         jQuery("#trip_Ad").owlCarousel({
+            jQuery("#trip_Ad").owlCarousel({
 
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
                 items: 1,
@@ -200,14 +204,13 @@
             });
 
         });
-</script>
-	  <script>
+    </script>
+    <script>
         jQuery('.carousel').carousel({
             pause: 'none'
         });
     </script>
-	
-</body>
 
-</html>
+    </body>
 
+    </html>

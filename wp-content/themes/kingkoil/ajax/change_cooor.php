@@ -54,8 +54,10 @@ else
 					 <?php } ?><!-- items mirrored twice, total of 12 --> 
  <!-- items mirrored twice, total of 12 -->      
  </ul>                        </div> 
+ <script src="<?php echo get_template_directory_uri(); ?>/js/html5lightbox.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script defer src="<?php echo get_template_directory_uri(); ?>/js/jquery.flexslider.js"></script>
+
 <script type="text/javascript">
       
       jQuery(window).ready(function () {

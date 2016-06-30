@@ -897,7 +897,7 @@ select::-ms-expand {
                         }
                         
                         .heading:before {
-                            content: "1";
+                            content: "3";
                             font-family: "SourceSansPro-Light";
                             font-size: 64px;
                             left: -40px;
@@ -915,7 +915,7 @@ select::-ms-expand {
                         }
                         
                         .heading3:before {
-                            content: "3";
+                            content: "1";
                             font-family: "SourceSansPro-Light";
                             font-size: 64px;
                             left: -40px;
@@ -1119,6 +1119,24 @@ select::-ms-expand {
                         
                         .copyright {
                             margin: 150px 0 0;
+                        }
+                        
+                        .copyright > p {
+                            float: left;
+                            margin: 0 10px 0 0;
+                        }
+                        
+                        .imark {
+                            border-left: 1px solid #474747;
+                            padding: 0 0 0 10px;
+                        }
+                        
+                        .imark a {
+                            color: #00aff0;
+                        }
+                        
+                        .imark a:hover {
+                            color: #000;
                         }
                         
                         .live_chat {
@@ -1898,9 +1916,9 @@ select::-ms-expand {
                         }
                         
                         .product_view {
-							margin: 0 0 80px;
-							padding-top: 170px;
-						}
+                            margin: 0 0 80px;
+                            padding-top: 170px;
+                        }
                         
                         .product_diffr_view {
                             cursor: pointer;
@@ -2381,6 +2399,65 @@ select::-ms-expand {
                         
                         .submit_buton_form:hover {
                             background: #00aff0 !important;
+                        }
+                        
+                        .not_found_page {
+                            text-align: center;
+                            padding: 170px 0 70px;
+                        }
+                        
+                        .not_found_page h2 {
+                            font-size: 90px;
+                            color: #00b5f7;
+                            text-align: center;
+                            font-weight: 700;
+                        }
+                        
+                        .not_found_page h3 {
+                            font-size: 20px;
+                            color: #000;
+                            text-align: center;
+                        }
+                        
+                        .not_found_page p {
+                            text-align: center;
+                            font-size: 15px;
+                            color: #000;
+                            margin: 22px 0 50px;
+                        }
+                        
+                        .not_found_page a {
+                            display: inline-block;
+                            padding: 12px 25px;
+                            text-transform: capitalize;
+                            font-size: 18px;
+                            color: #fff;
+                            background: #00b5f7;
+                            transition: all 0.3s ease;
+                            -webkit-transition: all 0.3s ease;
+                            -moz-transition: all 0.3s ease;
+                            -ms-transition: all 0.3s ease;
+                            border-radius: 3px;
+                        }
+                        
+                        .not_found_page a:hover {
+                            background: #000;
+                        }
+                        
+                        .not_found_nav {
+                            background-color: hsl(0, 0%, 76%) !important;
+                        }
+                        
+                        .srch_ttl1 {
+                            background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+                            border-bottom: 2px solid #000000;
+                            font-size: 45px;
+                            margin: 40px 0 0;
+                            padding: 0;
+                        }
+                        
+                        .srch_blog {
+                            padding-top: 0 !important;
                         }
                         
                         @media (min-width: 1600px) {
